@@ -1,4 +1,19 @@
-WORD=MONGO
+API_KEY="PEu9ddERyBg0cX89P8lxrj8RDY1XI0LcG5cGXOH5GLn3njXH6Fc5UC8FsH7AaokW"
+URL="https://data.mongodb-api.com/app/data-cyyer/endpoint/data/beta"
+CLUSTER="BashWordle"
+
+# Get random word from the DB.
+WORD=$(curl --location --request POST -s $URL'/action/aggregate' \
+--header 'Content-Type: application/json' \
+--header 'Access-Control-Request-Headers: *' \
+--header 'api-key: '$API_KEY \
+--data-raw '{
+    "collection":"words",
+    "database":"wordle",
+    "dataSource":"'$CLUSTER'",
+    "pipeline": [{"$sample": {"size": 1}}]
+}' | jq -r .documents[0].word)
+
 TRIES=0
 GO_ON=1
 while [ $GO_ON -eq 1 ]
