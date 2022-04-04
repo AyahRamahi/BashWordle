@@ -1,6 +1,6 @@
 # BashWordle
 
-### About
+### 📝 About
 A simple command-line Wordle game using MongoDB.
 
 ### 🧰 To Do
@@ -10,5 +10,5 @@ A simple command-line Wordle game using MongoDB.
 4. Check [Platpus](http://sveinbjorn.org/platypus) to create a Mac application from the script.
 
 
-### Resources
+### 📚 Resources
 1. [Bash Reference Manual](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html)
